@@ -29,6 +29,11 @@ public class Fragment_List extends Fragment {
     RecyclerView recyclerView;
     Context context;
     RecyclerViewAdapter recyclerViewAdapter;
+    Interfaz Yinterfaz;
+
+    public void setInterfaz(Interfaz interfaz) {
+        Yinterfaz = interfaz;
+    }
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -53,6 +58,8 @@ public class Fragment_List extends Fragment {
         return fragment;
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +70,8 @@ public class Fragment_List extends Fragment {
 
 
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -78,7 +87,8 @@ public class Fragment_List extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerViewAdapter = new RecyclerViewAdapter(DummyContent.ITEMS, mListener);
+
+            recyclerViewAdapter = new RecyclerViewAdapter(DummyContent.ITEMS, mListener,Yinterfaz);
 
 
             recyclerView.setAdapter(recyclerViewAdapter);

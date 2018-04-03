@@ -4,12 +4,13 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+
     </style>
 
 
-<!--agregue esto para darle estilo Tamano text del toolbar,fondo negro en el menu de setting
-    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">18sp</item>
+    <!--agregue esto para darle estilo Tamano text del toolbar,fondo negro en el menu de setting
+        <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+            <item name="android:textSize">18sp</item>
 
-    </style>-->
+        </style>-->
 </resources>

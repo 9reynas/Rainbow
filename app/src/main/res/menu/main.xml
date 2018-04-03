@@ -2,21 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/ash_id"
         android:icon="@mipmap/ic_ash_round"
         android:title="Six"
         app:showAsAction="always" />
 
 
+    <item
+        android:id="@+id/action_settings"
 
-
-
-
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
     <item android:title="Item" />
     <item android:title="Item" />
     <item android:title="Item" />

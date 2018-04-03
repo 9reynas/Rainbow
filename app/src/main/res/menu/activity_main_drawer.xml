@@ -25,9 +25,11 @@
             android:icon="@drawable/ic_fingerprint_black_24dp"
             android:title="Item" />
         <item
-            android:id="@+id/app_bar_switch"
-            android:title="Bar_switch"
-            app:actionLayout="@layout/switch_item" />
+            android:icon="@drawable/ic_fingerprint_black_24dp"
+            android:title="Item" />
+        <item
+            android:icon="@drawable/ic_fingerprint_black_24dp"
+            android:title="Item" />
     </group>
 
     <item android:title="Communicate">
@@ -43,18 +45,5 @@
         </menu>
     </item>
 
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share1"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send2"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>

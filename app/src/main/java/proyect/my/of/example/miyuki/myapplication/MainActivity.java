@@ -14,16 +14,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import proyect.my.of.example.miyuki.myapplication.dummy.DummyContent;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, BlankFragment.OnFragmentInteractionListener,Fragment_Ash.OnFragmentInteractionListener
-,Fragment_List.OnListFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener,
+        BlankFragment.OnFragmentInteractionListener,
+        Fragment_Ash.OnFragmentInteractionListener,
+        Fragment_List.OnListFragmentInteractionListener
+
+{
 
 
 
     Fragment fragment;
+    Interfaz interfaz= new Interfaz() {
+        @Override
+        public void OpenFrag() {
+            //Toast.makeText(getApplicationContext(),"dxfd",Toast.LENGTH_LONG).show();
+            Fragment fragment = new BlankFragment();
+            mostrar_fragment(fragment);
+        }
+    };
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +65,13 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
     }
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -82,13 +104,12 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.ash_id) {
             fragment = new Fragment_Ash();
-            mostrar_fragment();
+            mostrar_fragment(fragment);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -101,7 +122,10 @@ public class MainActivity extends AppCompatActivity
             fragment = new BlankFragment();
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            fragment = new Fragment_List();
+            Fragment_List fragment_list = new Fragment_List();
+            fragment_list.setInterfaz(interfaz);
+            fragment = fragment_list;
+
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -113,14 +137,14 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        mostrar_fragment();
+        mostrar_fragment(fragment);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    public void mostrar_fragment() {
+    public void mostrar_fragment(Fragment fragment) {
 
         getFragmentManager().beginTransaction().replace(R.id.fragment_layout_id, fragment).commit();
     }
@@ -135,4 +159,7 @@ public class MainActivity extends AppCompatActivity
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
 
     }
+
+
+
 }
